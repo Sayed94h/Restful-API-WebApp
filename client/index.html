@@ -10,16 +10,22 @@
 
   <script type="module">
     import { init } from './app/init.js'
-    window.onload = init;
+    document.getElementById("display-courses").onclick = init
+   // window.onload = init;
   </script>
 </head>
 
 <body>
   <header>
     <h1>
-      This is the frontend of courses web app
+      Welcome to web application courses
     </h1>
   </header>
+
+  <section class="ui">
+    <h2 id="display-courses">Display all courses</h2>
+    <h2 id="create-course">Create a new course</h2>
+  </section>
 
 </body>
 
