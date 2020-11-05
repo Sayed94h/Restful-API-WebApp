@@ -10,7 +10,7 @@
 
   <script type="module">
     import { init } from './app/init.js'
-    document.getElementById("display-courses").onclick = init
+    window.onload = init
    // window.onload = init;
   </script>
 </head>
@@ -26,7 +26,15 @@
     <h2 id="display-courses">Display all courses</h2>
     <h2 id="create-course">Create a new course</h2>
   </section>
-
+  <form>
+    <input type="text" id="courseID" placeholder="Enter the course ID" name="courseID">
+    <input type="button" id="display-oneCourse" value="Display" name="display-button">
+  </form>
+  <!--  courses list container  -->
+  <section id="listContainer">
+    <!--  courses list container  -->
+  </section>
+  <script src="./app/render-courses.js"></script>
 </body>
 
 </html>
