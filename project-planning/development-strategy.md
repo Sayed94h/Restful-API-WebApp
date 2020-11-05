@@ -15,15 +15,19 @@ Refactoring the project RESTFull API with NodeJS and Express in a functional web
 
 ## 1. initial-application
 
-> Assigned to _yourName_
+> Assigned to _Sayed kazimi_
 
-**User story**
+**As a user when I visit a website I want to see what the website is about and what I can do with**
 
-This part is create in a branch called `Branch Name` and merged in the `master` when it was completed.
+This part is create in a branch called `initial-app` and merged in the `master` when it was completed.
 
-### Task A:
+### Task A: HTML
 
-### Task B:
+- Added two buttons for display courses and create courses
+
+### Task B: CSS
+
+- Added style for the added HTML elements
 
 ### Task C:
 

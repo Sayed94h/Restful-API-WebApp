@@ -6,3 +6,20 @@ body {
 header {
 	text-align: center;
 }
+
+section.ui {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: space-around;
+	text-align: center;
+}
+
+section.ui h2 {
+	border: 2px darkblue solid;
+	border-radius: 1em;
+	background-color: rgba(0, 0, 255, 0.8);
+	color: #fff;
+	padding: 3vh;
+	text-align: center;
+	cursor: pointer;
+}
