@@ -57,3 +57,34 @@ This part is create in a branch called `get-and-display` and merged in the `mast
 - Created two functions for fetching data
 
 ---
+
+## 3. create courses
+
+> Assigned to _Sayed kazimi_
+
+**As a user I want to be able to create course with a specific course name**
+
+This part is create in a branch called `create-course` and merged in the `master` when it was completed.
+
+### Task A: HTML
+
+- Added a form with two inputs, one for enter the course name and another for to submit the input
+
+### Task B: CSS
+
+- Added style for the added HTML elements
+
+### Task C: JS
+
+- Added one route
+- Added one handlers
+
+  - Read the entire file
+  - Validate the user input
+  - push the user input if it is valid to the file content container
+  - write the final changes to the database
+
+- Created two functions for creating the form and fetching the data
+- Alert to user if it is done with success or failure
+
+---

@@ -1,14 +1,62 @@
 [
-    {
-        "name": "NodeJS",
-        "id": 1
-    },
-    {
-        "name": "ExpressJS",
-        "id": 2
-    },
-    {
-        "name": "JavaScript",
-        "id": 3
-    }
+ {
+  "name": "NodeJS",
+  "id": 1
+ },
+ {
+  "name": "ExpressJS",
+  "id": 2
+ },
+ {
+  "name": "JavaScript",
+  "id": 3
+ },
+ {
+  "id": 4,
+  "name": "css"
+ },
+ {
+  "id": 5,
+  "name": "html"
+ },
+ {
+  "id": 6,
+  "name": "Java"
+ },
+ {
+  "id": 7,
+  "name": "SQL"
+ },
+ {
+  "id": 8,
+  "name": "Python"
+ },
+ {
+  "id": 9,
+  "name": "C++"
+ },
+ {
+  "id": 10,
+  "name": "c#"
+ },
+ {
+  "id": 11,
+  "name": "c"
+ },
+ {
+  "id": 12,
+  "name": "VB"
+ },
+ {
+  "id": 13,
+  "name": "PowerShell"
+ },
+ {
+  "id": 14,
+  "name": "Command-line"
+ },
+ {
+  "id": 15,
+  "name": "Microsoft Office365"
+ }
 ]

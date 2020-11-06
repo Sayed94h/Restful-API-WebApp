@@ -35,17 +35,21 @@ section.each-course {
 	align-items: center;
 }
 
-form {
-	margin-left: 10%;
+section#input-container {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: space-around;
+	align-items: center;
 }
-
-form input[name="courseID"] {
+form input[name="courseID"],
+form input#name-input {
 	height: 5vh;
 	font-size: 2vw;
-	border-radius: 0.5em;
+	border-radius: 0.3em;
 }
 
-form input[name="display-button"] {
+form input[name="display-button"],
+form input#post-course {
 	height: 6vh;
 	font-size: 2vw;
 	border-radius: 0.5em;
