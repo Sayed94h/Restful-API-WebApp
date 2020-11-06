@@ -5,9 +5,8 @@ const router = express.Router();
 
 router.get("/", controllers.hello);
 
+// write your routes
 router.get("/courses", controllers.getCourses);
 router.get("/courses/:id", controllers.getOneCourse);
-
-// write your routes
-
+router.post("/courses", controllers.createCourse);
 module.exports = router;
