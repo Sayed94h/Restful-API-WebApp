@@ -23,3 +23,31 @@ section.ui h2 {
 	text-align: center;
 	cursor: pointer;
 }
+
+section#listContainer {
+	width: 50%;
+}
+
+section.each-course {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	justify-content: space-around;
+	align-items: center;
+}
+
+form {
+	margin-left: 10%;
+}
+
+form input[name="courseID"] {
+	height: 5vh;
+	font-size: 2vw;
+	border-radius: 0.5em;
+}
+
+form input[name="display-button"] {
+	height: 6vh;
+	font-size: 2vw;
+	border-radius: 0.5em;
+	cursor: pointer;
+}

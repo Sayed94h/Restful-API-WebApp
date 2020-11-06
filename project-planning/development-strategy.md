@@ -32,3 +32,28 @@ This part is create in a branch called `initial-app` and merged in the `master` 
 ### Task C:
 
 ---
+
+## 2. Get-and-display the courses
+
+> Assigned to _Sayed kazimi_
+
+**As a user I want to be able to list all courses and also a specific course by its ID**
+
+This part is create in a branch called `get-and-display` and merged in the `master` when it was completed.
+
+### Task A: HTML
+
+- Added a form with two inputs, one for enter the course ID and another for to submit the input
+- Added many elements for rendering the data on website
+
+### Task B: CSS
+
+- Added style for the added HTML elements
+
+### Task C: JS
+
+- Added two routes
+- Added two handlers
+- Created two functions for fetching data
+
+---
