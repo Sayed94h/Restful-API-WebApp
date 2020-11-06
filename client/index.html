@@ -27,6 +27,9 @@
     <h2 id="edit-course">
       Edit a course
     </h2>
+    <h2 id="delete-course">
+      Delete a course
+    </h2>
     <h2 id="create-course">Create a new course</h2>
   </section>
   <!--  input or form container   -->
@@ -40,13 +43,23 @@
   </section>
 
   <!--  update form   -->
-  <section class="section-update">
+  <section class="update">
 
-    <form>
+    <form class="section-update">
       <label for="courseName">Edit Course</label>
       <input type="text" placeholder="Enter the new name" id="courseName">
       <input type="text" placeholder="Enter course ID" id="id-input">
       <input type="button" value="Update" id="update-button">
+    </form>
+  </section>
+
+  <!--  delete form   -->
+  <section class="delete">
+
+    <form class="section-delete">
+      <label for="courseName">Delete Course</label>
+      <input type="text" placeholder="Enter course ID" id="id-delete">
+      <input type="button" value="Delete" id="delete-button">
     </form>
   </section>
 
@@ -58,6 +71,7 @@
   <script src="./app/render-courses.js"></script>
   <script src="./app/create-course.js"></script>
   <script src="./app/edit-course.js"></script>
+  <script src="./app/delete-course.js"></script>
 </body>
 
 </html>

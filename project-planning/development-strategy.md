@@ -99,8 +99,9 @@ This part is create in a branch called `update-course` and merged in the `master
 
 ### Task A: HTML
 
-- Added a form with three inputs, one for enter the course name, one for entering course ID and another for to submit the input
+- Added a form with three inputs and one label, one for enter the course name, one for entering course ID and another for to submit the input
 - Added an h2 as a button for edit course
+- Added a section element for controlling the form position
 
 ### Task B: CSS
 
@@ -119,5 +120,45 @@ This part is create in a branch called `update-course` and merged in the `master
 
 - Created two functions for displaying the form and fetching the data
 - Alert to user if it is done with success or failure
+
+---
+
+## 5. delete courses
+
+> Assigned to _Sayed kazimi_
+
+**As a user I want to be able to delete a course with a specific course id**
+
+This part is create in a branch called `delete-course` and merged in the `master` when it was completed.
+
+### Task A: HTML
+
+- Added a form with two inputs and one label, one for enter the course id and another for to submit the input
+- Added an h2 as a button for Displaying the delete form
+- Added a section element for controlling the form position
+
+### Task B: CSS
+
+- Added style for the added HTML elements
+- Changed some styles from the previous branch
+
+### Task C: JS
+
+- Added one route with delete method
+- Added one handler
+
+  - Read the entire file
+  - Check if there is a course with the given ID
+  - Delete the course with the given ID
+  - push the changes if these are valid to the file container(virtual copy of courses.json or the variable 'parsedData')
+  - write the final changes to the database(courses.json)
+
+- Created two functions for displaying the form and fetching the data
+- Alert to user if it is done with success or failure
+
+### Task D: fixing
+
+- fixing a bug(duplicate ID)
+- Changing the logging messages to better messages
 
 ---

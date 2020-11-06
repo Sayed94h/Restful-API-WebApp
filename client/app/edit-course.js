@@ -13,9 +13,7 @@ let dis = false;
 function displayEditFormContainer() {
 	dis = !dis;
 	if (dis) {
-		editFormContainer.style.display = "initial";
-		editFormContainer.style.marginLeft = "5%";
-		editFormContainer.style.marginTop = "3vh";
+		editFormContainer.style.display = "contents";
 	} else {
 		editFormContainer.style.display = "none";
 	}
@@ -40,11 +38,11 @@ const updateOneCourse = async (event) => {
 		console.log("Error from put method: ", res);
 	} else {
 		const data = await res.json();
-		console.log("saved data: ", data);
+		console.log("Edited Course: ", data);
 		let courseN = data.name;
 		let courseID = data.id;
 		alert(
-			`Your change has been saved:\n Course Name: ${courseN} \n Course ID: ${courseID}`
+			`Your change has been saved.\nThen new course is:\nCourse Name: ${courseN} \n Course ID: ${courseID}`
 		);
 	}
 	inputID.value = "";
