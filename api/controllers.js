@@ -12,6 +12,9 @@ const controllers = {
 		res.json({ api: "courses!" });
 	},
 	getCourses: (req, res, next) => {
+		/**
+		 *  Display all courses
+		 */
 		fs.readFile(DATA_DIR, "UTF-8", (err, data) => {
 			if (err) {
 				console.error("Error from the read file in getCourses function: ", err);
@@ -23,6 +26,9 @@ const controllers = {
 		});
 	},
 	getOneCourse: (req, res, next) => {
+		/**
+		 * Display just one course by providing its ID
+		 */
 		fs.readFile(DATA_DIR, "UTF-8", (err, data) => {
 			if (err) {
 				console.error("Error from the read file in getCourses function: ", err);
@@ -42,8 +48,10 @@ const controllers = {
 		});
 	},
 	createCourse: (req, res, next) => {
+		/**
+		 * Create one course by providing the course name
+		 */
 		// read the entire file
-		//console.log("path: ", DATA_DIR);
 		fs.readFile(DATA_DIR, "UTF-8", (err, data) => {
 			if (err) {
 				console.error("Error from the read file in getCourses function: ", err);
@@ -52,17 +60,14 @@ const controllers = {
 			let parsedData, toWrite;
 			let parsedReadFile = JSON.parse(data);
 			parsedData = parsedReadFile;
-			//console.log("read file inside readFile Func: ", parsedData);
 			// validate the users input
 			function validateCourse(course) {
 				const schema = Joi.object({
 					name: Joi.string().min(1).required(),
 				});
-
 				const result = schema.validate(course);
 				return result;
 			}
-
 			// push the user input to the course file
 			const { error } = validateCourse(req.body);
 			if (error) {
@@ -80,7 +85,7 @@ const controllers = {
 
 			// convert to string
 			toWrite = JSON.stringify(parsedData, null, " ");
-			//console.log("toWrite file: ", toWrite);
+
 			// write to json file
 			fs.writeFile(DATA_DIR, toWrite, "UTF-8", (err) => {
 				if (err) {
@@ -91,6 +96,65 @@ const controllers = {
 				console.log("your changes were saved");
 			});
 			res.json(newCourse);
+		});
+	},
+	editCourse: (req, res, next) => {
+		/**
+		 *  First read the file in the database
+		 */
+		fs.readFile(DATA_DIR, "UTF-8", (err, data) => {
+			if (err) {
+				console.error("Error from the read file in getCourses function: ", err);
+				return;
+			}
+			let parsedData = JSON.parse(data);
+			console.log("parsedData from read file: ", parsedData);
+			/**
+			 * Check if there is a course with the given ID
+			 */
+			let specificCourse = parsedData.find(function (c) {
+				console.log(`c.id is: ${c.id}, req.params.id is: ${req.params.id}`);
+				return c.id === parseInt(req.params.id);
+			});
+
+			if (!specificCourse) {
+				console.log("the id is not ok");
+				return res.status(404).send("The course with given ID was not found");
+			}
+
+			/**
+			 * validate the users input
+			 */
+			function validateCourse(course) {
+				const schema = Joi.object({
+					name: Joi.string().min(1).required(),
+				});
+				const result = schema.validate(course);
+				return result;
+			}
+			const { error } = validateCourse(req.body);
+			if (error) {
+				res.status(400).send(error.details[0].message);
+				return;
+			}
+			/**
+			 * update the course with the given ID
+			 */
+			specificCourse.name = req.body.name;
+			let toWrite = JSON.stringify(parsedData, null, " ");
+
+			/**
+			 * write to json file (save changes)
+			 */
+			fs.writeFile(DATA_DIR, toWrite, "UTF-8", (err) => {
+				if (err) {
+					console.log("Your changes did not saved");
+					process.exit();
+				}
+
+				console.log("your changes were saved");
+			});
+			res.send(specificCourse);
 		});
 	},
 };

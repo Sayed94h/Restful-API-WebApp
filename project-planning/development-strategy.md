@@ -88,3 +88,36 @@ This part is create in a branch called `create-course` and merged in the `master
 - Alert to user if it is done with success or failure
 
 ---
+
+## 4. Edit or update courses
+
+> Assigned to _Sayed kazimi_
+
+**As a user I want to be able to edit the course name with a specific course id**
+
+This part is create in a branch called `update-course` and merged in the `master` when it was completed.
+
+### Task A: HTML
+
+- Added a form with three inputs, one for enter the course name, one for entering course ID and another for to submit the input
+- Added an h2 as a button for edit course
+
+### Task B: CSS
+
+- Added style for the added HTML elements
+
+### Task C: JS
+
+- Added one route with put method
+- Added one handlers
+
+  - Read the entire file
+  - Validate the user input
+  - Change the course name with the new course name
+  - push the changes if these are valid to the file content container
+  - write the final changes to the database
+
+- Created two functions for displaying the form and fetching the data
+- Alert to user if it is done with success or failure
+
+---

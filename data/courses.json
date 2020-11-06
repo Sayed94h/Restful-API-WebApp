@@ -17,7 +17,7 @@
  },
  {
   "id": 5,
-  "name": "html"
+  "name": "HTML"
  },
  {
   "id": 6,
@@ -58,5 +58,9 @@
  {
   "id": 15,
   "name": "Microsoft Office365"
+ },
+ {
+  "id": 16,
+  "name": "MS Azure"
  }
 ]

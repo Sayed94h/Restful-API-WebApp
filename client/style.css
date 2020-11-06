@@ -9,7 +9,7 @@ header {
 
 section.ui {
 	display: grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: auto auto auto auto;
 	justify-content: space-around;
 	text-align: center;
 }
@@ -54,4 +54,20 @@ form input#post-course {
 	font-size: 2vw;
 	border-radius: 0.5em;
 	cursor: pointer;
+}
+
+section.section-update {
+	display: none;
+}
+
+section.section-update form input {
+	padding: 0.5vw;
+	font-size: 1.5vw;
+}
+
+section.section-update form label {
+	padding: 0.5vw;
+	font-size: 1.5vw;
+	background-color: darkblue;
+	color: #fff;
 }
