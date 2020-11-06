@@ -40,6 +40,7 @@ section#input-container {
 	grid-template-columns: auto auto;
 	justify-content: space-around;
 	align-items: center;
+	margin-bottom: 5vh;
 }
 form input[name="courseID"],
 form input#name-input {
@@ -56,18 +57,27 @@ form input#post-course {
 	cursor: pointer;
 }
 
-section.section-update {
+section.update,
+section.delete {
+	margin-top: 3vh;
+	margin-left: 5%;
+}
+section form.section-update,
+section form.section-delete {
 	display: none;
 }
-
-section.section-update form input {
+form.section-update input,
+form.section-delete input {
 	padding: 0.5vw;
 	font-size: 1.5vw;
+	border-radius: 0.3em;
 }
 
-section.section-update form label {
-	padding: 0.5vw;
+form.section-update label,
+form.section-delete label {
+	padding: 0.6vw;
 	font-size: 1.5vw;
 	background-color: darkblue;
 	color: #fff;
+	border-radius: 0.3em;
 }

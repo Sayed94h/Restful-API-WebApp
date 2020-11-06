@@ -57,9 +57,8 @@ const controllers = {
 				console.error("Error from the read file in getCourses function: ", err);
 				return;
 			}
-			let parsedData, toWrite;
-			let parsedReadFile = JSON.parse(data);
-			parsedData = parsedReadFile;
+			let toWrite;
+			let parsedData = JSON.parse(data);
 			// validate the users input
 			function validateCourse(course) {
 				const schema = Joi.object({
@@ -75,7 +74,14 @@ const controllers = {
 				res.status(400).send(error.details[0].message);
 				return;
 			}
-
+			/**
+			 * solve duplicates ID
+			 */
+			let newID = 0;
+			parsedData.forEach((element) => {
+				newID++;
+				element.id = newID;
+			});
 			const newCourse = {
 				id: parsedData.length + 1,
 				name: req.body.name,
@@ -141,6 +147,51 @@ const controllers = {
 			 * update the course with the given ID
 			 */
 			specificCourse.name = req.body.name;
+			let toWrite = JSON.stringify(parsedData, null, " ");
+
+			/**
+			 * write to json file (save changes)
+			 */
+			fs.writeFile(DATA_DIR, toWrite, "UTF-8", (err) => {
+				if (err) {
+					console.log("Your changes did not saved");
+					process.exit();
+				}
+
+				console.log("your changes were saved");
+			});
+			res.send(specificCourse);
+		});
+	},
+	deleteCourse: (req, res, next) => {
+		/**
+		 *  First read the file in the database
+		 */
+		fs.readFile(DATA_DIR, "UTF-8", (err, data) => {
+			if (err) {
+				console.error("Error from the read file in getCourses function: ", err);
+				return;
+			}
+			let parsedData = JSON.parse(data);
+			console.log("parsedData from read file: ", parsedData);
+			/**
+			 * Check if there is a course with the given ID
+			 */
+			let specificCourse = parsedData.find(function (c) {
+				console.log(`c.id is: ${c.id}, req.params.id is: ${req.params.id}`);
+				return c.id === parseInt(req.params.id);
+			});
+
+			if (!specificCourse) {
+				console.log("the id is not ok");
+				return res.status(404).send("The course with given ID was not found");
+			}
+			/**
+			 * delete the course with the given ID
+			 */
+			const index = parsedData.indexOf(specificCourse);
+
+			parsedData.splice(index, 1);
 			let toWrite = JSON.stringify(parsedData, null, " ");
 
 			/**
