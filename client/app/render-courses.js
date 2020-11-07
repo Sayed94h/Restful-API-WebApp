@@ -9,22 +9,28 @@ const renderCourses = async () => {
 	const res = await fetch("/api/courses");
 	const data = await res.json();
 	console.log("data to display: ", data);
-	let lineNum = 0;
+
+	let tableEl = document.createElement("table");
+	let trElOne = document.createElement("tr");
+	let thElOne = document.createElement("th");
+	let thElTwo = document.createElement("th");
+	thElOne.innerHTML = "Course ID";
+	thElTwo.innerHTML = "Course Name";
+	trElOne.appendChild(thElOne);
+	trElOne.appendChild(thElTwo);
+	tableEl.appendChild(trElOne);
 	for (let i = 0; i < data.length; i++) {
-		lineNum++;
-		let sectionEl = document.createElement("section");
-		sectionEl.className = "each-course";
-		let pEl = document.createElement("p");
-		let nameContainer = document.createElement("h3");
-		let idContainer = document.createElement("h3");
-		pEl.textContent = `${lineNum}. `;
-		nameContainer.textContent = `Name: ${data[i].name}, `;
-		idContainer.textContent = `ID: ${data[i].id}`;
-		sectionEl.appendChild(pEl);
-		sectionEl.appendChild(nameContainer);
-		sectionEl.appendChild(idContainer);
-		listContainer.appendChild(sectionEl);
+		let row = document.createElement("tr");
+		let columnOne = document.createElement("td");
+		let columnTwo = document.createElement("td");
+		columnOne.textContent = `${data[i].id}`;
+		columnTwo.textContent = `${data[i].name}`;
+		row.appendChild(columnOne);
+		row.appendChild(columnTwo);
+
+		tableEl.appendChild(row);
 	}
+	listContainer.appendChild(tableEl);
 };
 // function to render just one course by ID
 const renderOneCourse = async (event) => {
@@ -34,21 +40,27 @@ const renderOneCourse = async (event) => {
 	const res = await fetch(`/api/courses/${inputValue}`);
 	const data = await res.json();
 	console.log("data to display: ", data);
-	let lineNum = 0;
+	let tableEl = document.createElement("table");
+	let trElOne = document.createElement("tr");
+	let thElOne = document.createElement("th");
+	let thElTwo = document.createElement("th");
+	thElOne.innerHTML = "Course ID";
+	thElTwo.innerHTML = "Course Name";
+	trElOne.appendChild(thElOne);
+	trElOne.appendChild(thElTwo);
+	tableEl.appendChild(trElOne);
 
-	lineNum++;
-	let sectionEl = document.createElement("section");
-	sectionEl.className = "each-course";
-	let pEl = document.createElement("p");
-	let nameContainer = document.createElement("h3");
-	let idContainer = document.createElement("h3");
-	pEl.textContent = `${lineNum}. `;
-	nameContainer.textContent = `Name: ${data.name}, `;
-	idContainer.textContent = `ID: ${data.id}`;
-	sectionEl.appendChild(pEl);
-	sectionEl.appendChild(nameContainer);
-	sectionEl.appendChild(idContainer);
-	listContainer.appendChild(sectionEl);
+	let row = document.createElement("tr");
+	let columnOne = document.createElement("td");
+	let columnTwo = document.createElement("td");
+	columnOne.textContent = `${data.id}`;
+	columnTwo.textContent = `${data.name}`;
+	row.appendChild(columnOne);
+	row.appendChild(columnTwo);
+
+	tableEl.appendChild(row);
+
+	listContainer.appendChild(tableEl);
 	courseID.value = "";
 };
 

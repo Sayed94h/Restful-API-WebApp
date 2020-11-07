@@ -21,7 +21,7 @@
  },
  {
   "id": 6,
-  "name": "SQL"
+  "name": "MySQL"
  },
  {
   "id": 7,
@@ -33,42 +33,42 @@
  },
  {
   "id": 9,
-  "name": "c#"
- },
- {
-  "id": 10,
-  "name": "c"
- },
- {
-  "id": 11,
   "name": "VB"
  },
  {
-  "id": 12,
+  "id": 10,
   "name": "PowerShell"
  },
  {
-  "id": 13,
+  "id": 11,
   "name": "Command-line"
  },
  {
-  "id": 14,
+  "id": 12,
   "name": "Microsoft Office365"
  },
  {
-  "id": 15,
+  "id": 13,
   "name": "MS Azure"
  },
  {
-  "id": 16,
+  "id": 14,
   "name": "Java Enterprise"
  },
  {
-  "id": 17,
+  "id": 15,
   "name": "Backend Developer"
  },
  {
-  "id": 18,
+  "id": 16,
   "name": "AI"
+ },
+ {
+  "id": 17,
+  "name": "C++ For Gamers"
+ },
+ {
+  "id": 18,
+  "name": "C#"
  }
 ]

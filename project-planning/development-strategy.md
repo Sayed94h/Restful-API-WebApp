@@ -162,3 +162,49 @@ This part is create in a branch called `delete-course` and merged in the `master
 - Changing the logging messages to better messages
 
 ---
+
+## 6. deployment
+
+> Assigned to _Sayed kazimi_
+
+**As a website owner I want that my website is accessible to all people around the world**
+
+This part is create in a branch called `deployment` and merged in the `master` when it was completed.
+
+### Task A: HTML
+
+- Nothing
+
+### Task B: CSS
+
+- Nothing
+
+### Task C: Package.json
+
+- Brought some changes to the package.json file so that the repo can be deployed to Heroku
+
+---
+
+## 7. final-touch
+
+> Assigned to _Sayed kazimi_
+
+**As a website owner I want that my website is as user friendly and attractive as possible**
+
+This part is create in a branch called `final-touch` and merged in the `master` when it was completed.
+
+### Task A: HTML
+
+- Brought some changes on some elements
+- Added footer
+
+### Task B: CSS
+
+- Changed many of the website's style
+
+### Task C: JS
+
+- Added a simple `setInterval` to change the color of the text in the placeholder each second
+- Brought also another changes to the code layout
+
+---
