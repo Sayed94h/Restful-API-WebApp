@@ -2,6 +2,12 @@
 
 Refactoring the project RESTFull API with NodeJS and Express in a functional web application.
 
+## WIREFRAME
+
+![wireframe](../images/wireframe.PNG)
+
+---
+
 ## 0. Setup
 
 > Assigned to _Sayed Kazimi_
