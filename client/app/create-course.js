@@ -1,20 +1,25 @@
 "use strict";
 
 const createCourseButton = document.getElementById("create-course");
-const inputContainer = document.getElementById("input-container");
+const createForm = document.getElementById("create-form");
+const submitButton = document.getElementById("post-course");
+const inputText = document.getElementById("name-input");
+
 function createInput() {
-	let formEl = document.createElement("form");
-	let inputText = document.createElement("input");
-	let submitButton = document.createElement("input");
-	submitButton.type = "button";
-	submitButton.value = "Create";
-	submitButton.id = "post-course";
-	inputText.type = "text";
-	inputText.placeholder = "Enter the course name";
-	inputText.id = "name-input";
-	formEl.appendChild(inputText);
-	formEl.appendChild(submitButton);
-	inputContainer.appendChild(formEl);
+	let isRed = false;
+	function setClass() {
+		isRed = !isRed;
+		console.log("isRed: ", isRed);
+		if (isRed) {
+			inputText.classList.remove("green");
+			inputText.classList.add("label");
+		} else {
+			inputText.classList.remove("label");
+			inputText.classList.add("green");
+		}
+	}
+	setInterval(setClass, 1000);
+
 	// post the new course to the server
 
 	const postCourse = async (event) => {

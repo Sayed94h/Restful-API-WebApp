@@ -14,26 +14,40 @@ section.ui {
 	text-align: center;
 }
 
-section.ui h2 {
+section.ui h4 {
 	border: 2px darkblue solid;
+	width: 13vw;
 	border-radius: 1em;
 	background-color: rgba(0, 0, 255, 0.8);
 	color: #fff;
-	padding: 3vh;
+	padding: 1vh;
 	text-align: center;
 	cursor: pointer;
 }
 
-section#listContainer {
-	width: 50%;
+/***
+		style for displaying the course list
+
+***/
+table {
+	margin-left: 5%;
+}
+table th {
+	color: white;
+	background-color: rgba(0, 0, 255, 0.8);
+	padding: 7px;
+}
+table td {
+	border: 1px darkblue solid;
+	padding: 5px;
+	text-align: center;
 }
 
-section.each-course {
-	display: grid;
-	grid-template-columns: auto auto auto;
-	justify-content: space-around;
-	align-items: center;
-}
+/***
+
+	style for the form and input tags
+
+***/
 
 section#input-container {
 	display: grid;
@@ -42,17 +56,26 @@ section#input-container {
 	align-items: center;
 	margin-bottom: 5vh;
 }
+
+input.label::-webkit-input-placeholder {
+	color: #f00;
+	font-weight: bold;
+}
+input.green::-webkit-input-placeholder {
+	color: green;
+	font-weight: bold;
+}
 form input[name="courseID"],
 form input#name-input {
-	height: 5vh;
-	font-size: 2vw;
+	padding: 0.5vw;
+	font-size: 1.2vw;
 	border-radius: 0.3em;
 }
 
 form input[name="display-button"],
 form input#post-course {
-	height: 6vh;
-	font-size: 2vw;
+	padding: 0.6vw;
+	font-size: 1.2vw;
 	border-radius: 0.5em;
 	cursor: pointer;
 }
@@ -61,6 +84,7 @@ section.update,
 section.delete {
 	margin-top: 3vh;
 	margin-left: 5%;
+	margin-bottom: 3vh;
 }
 section form.section-update,
 section form.section-delete {
@@ -69,15 +93,29 @@ section form.section-delete {
 form.section-update input,
 form.section-delete input {
 	padding: 0.5vw;
-	font-size: 1.5vw;
+	font-size: 1.2vw;
 	border-radius: 0.3em;
 }
 
 form.section-update label,
-form.section-delete label {
+form.section-delete label,
+form label[for="courseID"],
+form label[for="name-input"] {
 	padding: 0.6vw;
-	font-size: 1.5vw;
+	font-size: 1.2vw;
 	background-color: darkblue;
 	color: #fff;
 	border-radius: 0.3em;
+}
+
+footer {
+	text-align: center;
+	display: grid;
+	grid-template-rows: auto;
+	align-items: center;
+	background-color: darkblue;
+	color: #fff;
+	height: 20vh;
+	margin-top: 30%;
+	margin-bottom: 0;
 }

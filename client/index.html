@@ -16,32 +16,39 @@
 </head>
 
 <body>
+  <hr>
   <header>
     <h1>
       Welcome to web application courses
     </h1>
   </header>
-
+  <hr>
   <section class="ui">
-    <h2 id="display-courses">Display all courses</h2>
-    <h2 id="edit-course">
+    <h4 id="display-courses">Display all courses</h4>
+    <h4 id="edit-course">
       Edit a course
-    </h2>
-    <h2 id="delete-course">
+    </h4>
+    <h4 id="delete-course">
       Delete a course
-    </h2>
-    <h2 id="create-course">Create a new course</h2>
+    </h4>
+    <h4 id="create-course">Create a new course</h4>
   </section>
+  <hr>
   <!--  input or form container   -->
   <section id="input-container">
     <form>
+      <label for="courseID">Display By ID</label>
       <input type="text" id="courseID" placeholder="Enter the course ID" name="courseID">
       <input type="button" id="display-oneCourse" value="Display" name="display-button">
     </form>
     <!--  the form for creating course will be created below this line  -->
-
+    <form id="create-form">
+      <label for="name-input">Create Course</label>
+      <input type="text" id="name-input" placeholder="Enter the course name" name="name-input">
+      <input type="button" id="post-course" value="Create" name="create-button">
+    </form>
   </section>
-
+  <hr>
   <!--  update form   -->
   <section class="update">
 
@@ -57,7 +64,7 @@
   <section class="delete">
 
     <form class="section-delete">
-      <label for="courseName">Delete Course</label>
+      <label for="id-delete">Delete Course</label>
       <input type="text" placeholder="Enter course ID" id="id-delete">
       <input type="button" value="Delete" id="delete-button">
     </form>
@@ -68,6 +75,18 @@
   <section id="listContainer">
     <!--  courses list container  -->
   </section>
+
+  <!--  footer  -->
+
+  <footer>
+    <section>
+
+      <h2>
+        &copy; Sayed Kazimi | 2020
+      </h2>
+
+    </section>
+  </footer>
   <script src="./app/render-courses.js"></script>
   <script src="./app/create-course.js"></script>
   <script src="./app/edit-course.js"></script>

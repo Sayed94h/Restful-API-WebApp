@@ -6,10 +6,11 @@ const editFormContainer = document.querySelector(".section-update");
 const courseName = document.getElementById("courseName");
 const inputID = document.getElementById("id-input");
 const updateButton = document.getElementById("update-button");
-let dis = false;
+
 /**
  * display or not display the Edit form container
  */
+let dis = false;
 function displayEditFormContainer() {
 	dis = !dis;
 	if (dis) {
