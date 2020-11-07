@@ -2,7 +2,9 @@
 
 Refactoring the project RESTFull API with NodeJS and Express in a functional web application.
 
-You can find [here](./project-planning/development-strategy.md) out how this project is done
+You can find [here](./project-planning/development-strategy.md) out how this project is done.
+
+You can have a look at the **live demo** of this project [here](https://manage-courses.herokuapp.com/)
 
 ## Contributers are:
 
