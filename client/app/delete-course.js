@@ -7,9 +7,10 @@ const deleteID = document.getElementById("id-delete");
 const deleteButton = document.getElementById("delete-button");
 let displayDeleteForm = false;
 /**
- * display or not display the Edit form container
+ * display or not display the Edit form container when the user clicks on the Delete course button
  */
 function displayDeleteFormContainer() {
+	listContainer.innerHTML = "";
 	displayDeleteForm = !displayDeleteForm;
 	if (displayDeleteForm) {
 		deleteFormContainer.style.display = "contents";
@@ -40,11 +41,19 @@ const deleteOneCourse = async (event) => {
 		let courseN = data.name;
 		let courseID = data.id;
 		alert(
-			`Your change has been saved.\nThe following course deleted:\n Course Name: ${courseN} \n Course ID: ${courseID}`
+			`Your change has been saved.\nThe following course has been deleted:\n Course Name: ${courseN} \n Course ID: ${courseID}`
 		);
 	}
+	renderCourses();
 	deleteID.value = "";
 	event.preventDefault();
 };
+
+/**
+ *
+ * The event listeners
+ *
+ */
+
 deleteButton.addEventListener("click", deleteOneCourse);
 deleteCourse.addEventListener("click", displayDeleteFormContainer);

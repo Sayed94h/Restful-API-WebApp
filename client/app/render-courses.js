@@ -1,14 +1,18 @@
-"use-strict";
+"use strict";
 
 const displayButton = document.getElementById("display-courses");
 const listContainer = document.getElementById("listContainer");
 const displayOneCourse = document.getElementById("display-oneCourse");
 const courseID = document.getElementById("courseID");
+/**
+ * fetch the data and create a table to render the data in order and nice
+ *
+ */
 const renderCourses = async () => {
 	listContainer.innerHTML = "";
 	const res = await fetch("/api/courses");
 	const data = await res.json();
-	console.log("data to display: ", data);
+	//console.log("data to display: ", data);
 
 	let tableEl = document.createElement("table");
 	let trElOne = document.createElement("tr");
@@ -32,14 +36,20 @@ const renderCourses = async () => {
 	}
 	listContainer.appendChild(tableEl);
 };
-// function to render just one course by ID
-const renderOneCourse = async (event) => {
+
+/*************
+ *
+ * fetch the data and create a table to render the data in order and nice
+ *
+ * function to render just one course by ID
+ *
+ ***/
+const renderOneCourse = async () => {
 	listContainer.innerHTML = "";
 	let inputValue = courseID.value;
-	console.log("id: ", inputValue);
 	const res = await fetch(`/api/courses/${inputValue}`);
 	const data = await res.json();
-	console.log("data to display: ", data);
+	//console.log("data to display: ", data);
 	let tableEl = document.createElement("table");
 	let trElOne = document.createElement("tr");
 	let thElOne = document.createElement("th");
@@ -63,6 +73,10 @@ const renderOneCourse = async (event) => {
 	listContainer.appendChild(tableEl);
 	courseID.value = "";
 };
-
+/**
+ *
+ * The event listeners
+ *
+ */
 displayOneCourse.addEventListener("click", renderOneCourse);
 displayButton.addEventListener("click", renderCourses);

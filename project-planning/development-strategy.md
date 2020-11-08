@@ -210,7 +210,10 @@ This part is create in a branch called `final-touch` and merged in the `master` 
 
 ### Task C: JS
 
-- Added a simple `setInterval` to change the color of the text in the placeholder each second
+- Added a simple `setInterval` to change the color of the text in the placeholder each 700 ms to show the user where he/she should create a new course
+
 - Brought also another changes to the code layout
+- Added more comments to document the code
+- Fixed a bug
 
 ---

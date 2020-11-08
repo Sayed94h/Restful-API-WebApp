@@ -83,7 +83,7 @@ form input#post-course {
 section.update,
 section.delete {
 	margin-top: 3vh;
-	margin-left: 5%;
+
 	margin-bottom: 3vh;
 }
 section form.section-update,
@@ -108,6 +108,16 @@ form label[for="name-input"] {
 	border-radius: 0.3em;
 }
 
+/**
+	manipulate-courses
+*/
+
+section.manipulate-courses {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: space-around;
+	align-items: center;
+}
 footer {
 	text-align: center;
 	display: grid;
