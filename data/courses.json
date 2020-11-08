@@ -13,15 +13,11 @@
  },
  {
   "id": 4,
-  "name": "css"
+  "name": "CSS"
  },
  {
   "id": 5,
   "name": "HTML"
- },
- {
-  "id": 6,
-  "name": "MySQL"
  },
  {
   "id": 7,
@@ -45,7 +41,7 @@
  },
  {
   "id": 12,
-  "name": "Microsoft Office365"
+  "name": "MS Office365"
  },
  {
   "id": 13,
@@ -62,10 +58,6 @@
  {
   "id": 16,
   "name": "AI"
- },
- {
-  "id": 17,
-  "name": "C++ For Gamers"
  },
  {
   "id": 18,

@@ -8,10 +8,11 @@ const inputID = document.getElementById("id-input");
 const updateButton = document.getElementById("update-button");
 
 /**
- * display or not display the Edit form container
+ * display or not display the Edit form container when the user clicks on Edit Course button
  */
 let dis = false;
 function displayEditFormContainer() {
+	listContainer.innerHTML = "";
 	dis = !dis;
 	if (dis) {
 		editFormContainer.style.display = "contents";
@@ -48,7 +49,15 @@ const updateOneCourse = async (event) => {
 	}
 	inputID.value = "";
 	courseName.value = "";
+	renderCourses();
 	event.preventDefault();
 };
+
+/**
+ *
+ * The event listeners
+ *
+ */
+
 updateButton.addEventListener("click", updateOneCourse);
 editCourse.addEventListener("click", displayEditFormContainer);
